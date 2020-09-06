@@ -33,7 +33,20 @@
                     
                     <?php
                     
-                        $breadCrumbs = array('Главная', 'PHP', 'Функции');
+                        $breadCrumbs = [
+                            [
+                                'title' => 'Главная',
+                                'href' => 'href'
+                            ],
+                            [
+                                'title' => 'PHP',
+                                'href' => 'href'
+                            ],
+                            [
+                                'title' => 'Функции',
+                                'href' => 'href'
+                            ]
+                        ];
                         
                         $count = count($breadCrumbs);
 
@@ -45,9 +58,9 @@
                             <ol class="breadcrumb page-breadcrumb">
                                 <? foreach ($breadCrumbs as $id => $breadCrumb): ?>
                                     <? if ($id+1 != $count) { ?>
-                                        <li class="breadcrumb-item"><a href="#"><?= $breadCrumb;?></a></li>
+                                        <li class="breadcrumb-item"><a href="<?= $breadCrumb['href'];?>"><?= $breadCrumb['title'];?></a></li>
                                     <? } else { ?>
-                                        <li class="breadcrumb-item active"><?= $breadCrumb;?></li>
+                                        <li class="breadcrumb-item active"><?= $breadCrumb['title'];?></li>
                                     <?} endforeach; ?>    
                             </ol>
                         </div>
